@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LibrarySystemV1.Models.Book>
+@{
+    ViewBag.Title = "GetBooks";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 40);
+}
+
+<h2>Books</h2>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(w => w.BookId)</th>
+        <th>@Html.DisplayNameFor(w => w.BookName)</th>
+        <th>@Html.DisplayNameFor(w => w.NoOfCopies)</th>
+        <th>@Html.DisplayNameFor(w => w.NoOfExistingCopies)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookId</td>
+            <td>@item.BookName</td>
+            <td>@item.NoOfCopies</td>
+            <td>@item.NoOfExistingCopies</td>
+        </tr>
+    }
+</table>

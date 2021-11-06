@@ -1,0 +1,19 @@
+﻿@model LibrarySystemV1.Models.Book
+@{
+    ViewBag.Title = "RevertPage";
+}
+
+<h2>Reverting Operation</h2>
+
+@using (Html.BeginForm("CheckRevert", "Operations", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookId)
+        @Html.TextBoxFor(m => m.BookId, new { @class = "form-control", type = "number", required = "required" })
+        @Html.LabelFor(m => m.BookName)
+        @Html.TextBoxFor(m => m.BookName, new { @class = "form-control", type = "text", required = "required" })
+    </div>
+    // form is postback to /Home/Enroll
+    <input type="submit" value="Revert" class="btn-dark" />
+
+}

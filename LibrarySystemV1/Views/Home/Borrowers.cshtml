@@ -1,0 +1,24 @@
+﻿@model IEnumerable<LibrarySystemV1.Models.Borrower>
+@{
+    ViewBag.Title = "GetBorrowers";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 40);
+}
+
+<h2>Borrowers</h2>
+
+<table class="table table-striped table-hover">
+    <center>
+    <tr>
+        <th>@Html.DisplayNameFor(w => w.BorrowerId)</th>
+        <th>@Html.DisplayNameFor(w => w.BorrowerName)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BorrowerId</td>
+            <td>@item.BorrowerName</td>
+        </tr>
+    }
+    </center>
+</table>
+

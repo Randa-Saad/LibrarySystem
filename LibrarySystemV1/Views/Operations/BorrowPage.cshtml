@@ -1,0 +1,20 @@
+﻿@model LibrarySystemV1.Models.Borrower
+
+@{
+    ViewBag.Title = "BorrowPage";
+}
+
+<h2>Borrowing Operation</h2>
+@using (Html.BeginForm("CheckBorrow", "Operations", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.BorrowerName)
+        @Html.TextBoxFor(m => m.BorrowerName, new { @class = "form-control" ,type ="text", required = "required" })
+
+        @Html.LabelFor(m => m.BookId)
+        @Html.TextBoxFor(m => m.BookId, new { @class = "form-control", type ="number", required = "required" })
+    </div>
+
+    <input type="submit" value="Borrow" class="btn-dark"  />
+
+}
